@@ -15,7 +15,7 @@ function TodoItem(props) {
   return (
     <li className={styles.item}>
       <input
-        type='checkbox'
+        type="checkbox"
         className={styles.checkbox}
         checked={completed}
         onChange={() => props.handleChangeProps(id)}
