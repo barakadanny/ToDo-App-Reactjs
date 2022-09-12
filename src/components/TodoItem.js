@@ -8,20 +8,20 @@ function TodoItem(props) {
     opacity: 0.4,
     textDecoration: 'line-through',
   };
+
+  // Destructuring from props.todo.(id , completed, title) to 👇
+  const { completed, id, title } = props.todo;
+
   return (
     <li className={styles.item}>
       <input
         type='checkbox'
         className={styles.checkbox}
-        checked={props.todo.completed}
-        onChange={() => props.handleChangeProps(props.todo.id)}
+        checked={completed}
+        onChange={() => props.handleChangeProps(id)}
       />
-      <button onClick={() => props.deleteTodoProps(props.todo.id)}>
-        delete
-      </button>
-      <span style={props.todo.completed ? completedStyle : null}>
-        {props.todo.title}
-      </span>
+      <button onClick={() => props.deleteTodoProps(id)}>delete</button>
+      <span style={completed ? completedStyle : null}>{title}</span>
     </li>
   );
 }
