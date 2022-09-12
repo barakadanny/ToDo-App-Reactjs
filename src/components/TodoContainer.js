@@ -4,6 +4,7 @@ import TodoList from './TodoList';
 import Header from './Header';
 import InputTodo from './InputTodo';
 
+/* eslint-disable */
 class TodoContainer extends React.Component {
   state = {
     todos: [
@@ -41,9 +42,7 @@ class TodoContainer extends React.Component {
 
   delTodo = (id) => {
     this.setState({
-      todos: [
-        ...this.state.todos.filter((todo) => todo.id !== id),
-      ],
+      todos: [...this.state.todos.filter((todo) => todo.id !== id)],
     });
   };
 
@@ -60,8 +59,8 @@ class TodoContainer extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="inner">
+      <div className='container'>
+        <div className='inner'>
           <Header />
           <InputTodo addTodoProps={this.addTodoItem} />
           <TodoList

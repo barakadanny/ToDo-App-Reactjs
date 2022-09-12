@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './TodoItem.module.css';
 
+/* eslint-disable */
 function TodoItem(props) {
   const completedStyle = {
     fontStyle: 'italic',
@@ -15,7 +16,7 @@ function TodoItem(props) {
   return (
     <li className={styles.item}>
       <input
-        type="checkbox"
+        type='checkbox'
         className={styles.checkbox}
         checked={completed}
         onChange={() => props.handleChangeProps(id)}
